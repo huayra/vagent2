@@ -50,6 +50,7 @@
 	      <li class="active"id="nav-param"><a href="#params" onclick="showParam()">Home</a></li>
 	      <li id="nav-vcl"><a href="#VCL" onclick="showVCL()">VCL</a></li>
               <li id="nav-home"><a href="#about" onclick="showHome()">About</a></li>
+              <li id="nav-dashboard"><a href="#dashboard" onclick="showDashboard()">Dashboard</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -165,7 +166,149 @@
 	        <div id="usercontent"></div>
 	      </div>
 	    </div>
-	  </div><!-- params -->
+	  </div>
+	  <!-- params -->
+	  <div class="span9" id="dashboard" style="DISPLAY: none">
+            <div class="pull-right" style="margin-top:10px">
+              <span style="color: gray; margin-right: 5px">Refresh time</span>
+              <div class="slider slider-horizontal" style="width: 100px">
+                <input value="" type="text" data-slider-min="-20" data-slider-max="20" data-slider-step="1" data-slider-value="2" data-slider-tooltip="hide">
+              </div>
+              </div>
+            <div class="container">			
+            <!-- First row // Graphs -->
+              <div class="row-fluid">
+                <div class="span4">
+                  <div class="content-box">
+                    <div class="content-box-header">
+                      <i class="icon-fire"></i>
+                      Cache Hit Ratio
+                    </div>
+                    <div id="hit-ratio" class="text-center gauge" style="width:250px; height:200px">
+                      <svg height="100%" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.5px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Rapha�l 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><filter id="hit-ratio-inner-shadow"><feOffset dx="0" dy="3"></feOffset><feGaussianBlur result="offset-blur" stdDeviation="5"></feGaussianBlur><feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"></feComposite><feFlood flood-color="black" flood-opacity="0.2" result="color"></feFlood><feComposite operator="in" in="color" in2="inverse" result="shadow"></feComposite><feComposite operator="over" in="shadow" in2="SourceGraphic"></feComposite></filter></defs><path fill="#edebeb" stroke="none" d="M62.5,160L25,160A100,100,0,0,1,225,160L187.5,160A62.5,62.5,0,0,0,62.5,160Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" filter="url(#hit-ratio-inner-shadow)"></path><path fill="#f70000" stroke="none" d="M62.5,160L25,160A100,100,0,0,1,25,160L62.5,160A62.5,62.5,0,0,0,62.5,160Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" filter="url(#hit-ratio-inner-shadow)"></path><text x="125" y="31.25" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#999999" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 20px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="20px" font-weight="bold" font-family="Arial" fill-opacity="1"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0"> </tspan></text><text x="125" y="156.86274509803923" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#010101" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 30px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="30px" font-weight="bold" font-family="Arial" fill-opacity="1"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0">0</tspan></text><text x="125" y="177.2473604826546" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="12px" font-weight="normal" font-family="Arial" fill-opacity="1"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0">%</tspan></text><text x="43.75" y="177.2473604826546" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="12px" font-weight="normal" font-family="Arial" fill-opacity="1"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0">0</tspan></text><text x="206.25" y="177.2473604826546" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="12px" font-weight="normal" font-family="Arial" fill-opacity="1"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0">100</tspan></text></svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4">
+                  <div class="content-box">
+                    <div class="content-box-header">
+                      <i class="icon-globe"></i>
+                      Requests
+                    </div>
+                    <div id="request-gauge" class="text-center gauge" style="width:250px; height:200px">
+                      <svg height="100%" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.078125px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Rapha�l 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><filter id="request-gauge-inner-shadow"><feOffset dx="0" dy="3"></feOffset><feGaussianBlur result="offset-blur" stdDeviation="5"></feGaussianBlur><feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"></feComposite><feFlood flood-color="black" flood-opacity="0.2" result="color"></feFlood><feComposite operator="in" in="color" in2="inverse" result="shadow"></feComposite><feComposite operator="over" in="shadow" in2="SourceGraphic"></feComposite></filter></defs><path fill="#edebeb" stroke="none" d="M62.5,160L25,160A100,100,0,0,1,225,160L187.5,160A62.5,62.5,0,0,0,62.5,160Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" filter="url(#request-gauge-inner-shadow)"></path><path fill="#a9d70b" stroke="none" d="M62.5,160L25,160A100,100,0,0,1,25,160L62.5,160A62.5,62.5,0,0,0,62.5,160Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" filter="url(#request-gauge-inner-shadow)"></path><text x="125" y="31.25" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#999999" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 20px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="20px" font-weight="bold" font-family="Arial" fill-opacity="1"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0"> </tspan></text><text x="125" y="156.86274509803923" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#010101" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 30px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="30px" font-weight="bold" font-family="Arial" fill-opacity="1"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0">0</tspan></text><text x="125" y="177.2473604826546" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="12px" font-weight="normal" font-family="Arial" fill-opacity="1"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0">per second</tspan></text><text x="43.75" y="177.2473604826546" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="12px" font-weight="normal" font-family="Arial" fill-opacity="1"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0">0</tspan></text><text x="206.25" y="177.2473604826546" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="12px" font-weight="normal" font-family="Arial" fill-opacity="1"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0">100</tspan></text></svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4">
+                  <div class="content-box">
+                    <div class="content-box-header">
+                      <i class="icon-globe"></i>
+                      Bandwidth
+                    </div>
+                    <div id="bandwidth-gauge" class="text-center gauge" style="width:250px; height:200px">
+                      <svg height="100%" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.65625px;">
+                      <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Rapha�l 2.1.0</desc>
+                      <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                      <filter id="bandwidth-gauge-inner-shadow">
+                      <feOffset dx="0" dy="3">
+                      </feOffset>
+                      <feGaussianBlur result="offset-blur" stdDeviation="5">
+                      </feGaussianBlur>
+                      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse">
+                      </feComposite>
+                      <feFlood flood-color="black" flood-opacity="0.2" result="color"
+                      </feFlood>
+                      <feComposite operator="in" in="color" in2="inverse" result="shadow">
+                      </feComposite>
+                      <feComposite operator="over" in="shadow" in2="SourceGraphic">
+                      </feComposite>
+                      </filter>
+                      </defs>
+                      <path fill="#edebeb" stroke="none" d="M62.5,160L25,160A100,100,0,0,1,225,160L187.5,160A62.5,62.5,0,0,0,62.5,160Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" filter="url(#bandwidth-gauge-inner-shadow)">
+                      </path>
+                      <path fill="#40b7f1" stroke="none" d="M62.5,160L25,160A100,100,0,0,1,25,160L62.5,160A62.5,62.5,0,0,0,62.5,160Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" filter="url(#bandwidth-gauge-inner-shadow)">
+                      </path>
+                      <text x="125" y="31.25" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#999999" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 20px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="20px" font-weight="bold" font-family="Arial" fill-opacity="1">
+                      <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0"> </tspan>
+                      </text>
+                      <text x="125" y="156.86274509803923" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#010101" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 30px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="30px" font-weight="bold" font-family="Arial" fill-opacity="1">
+                      <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0">0</tspan>
+                      </text>
+                      <text x="125" y="177.2473604826546" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="12px" font-weight="normal" font-family="Arial" fill-opacity="1">
+                      <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0">Mbps</tspan>
+                      </text>
+                      <text x="43.75" y="177.2473604826546" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="12px" font-weight="normal" font-family="Arial" fill-opacity="1">
+                      <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0">0</tspan>
+                      </text>
+                      <text x="206.25" y="177.2473604826546" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: Arial; fill-opacity: 1;" font-size="12px" font-weight="normal" font-family="Arial" fill-opacity="1">
+                      <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="0">100</tspan>
+                      </text>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Second row // Tables -->			
+              <div class="row-fluid">
+                <div class="span4">
+                  <div class="content-box">
+                    <div class="content-box-header">
+                      <i class="icon-signal"></i>
+                      Cache Metrics
+                    </div>
+                    <div id="cache-metrics-table">
+                    </div>
+                  </div>
+                </div>
+                <div class="span4">
+                  <div class="content-box">
+                    <div class="content-box-header">
+                      <i class="icon-signal"></i>
+                      Traffic Metrics
+	              </div>
+                    <div id="traffic-metrics-table">
+                    </div>
+                  </div>
+                </div>
+                <div class="span4">
+                  <div class="content-box">
+                    <div class="content-box-header">
+                      <i class="icon-signal"></i>
+                      Backend Metrics
+	            </div>
+                    <div id="backend-metrics-table">
+                    </div>
+                  </div>
+                </div>
+              </div>
+	      <!-- Third row // Backend requests -->
+	      <div class="row-fluid">
+	      	 <div class="span12">
+	      	   <div class="content-box">
+	      	     <div class="content-box-header">
+	      	       <i class="icon-thumbs-down"></i>
+	      	       Backend Requests
+	      	     </div>
+	      	     <div id="backend_request-table">
+	      	      	<table class="table table-striped" style="table-layout: fixed;">
+	      	      	  <thead>
+	      	      	    <tr>
+	      	      	      <th style="width:10%">Counter</th>
+	      	      	      <th style="text-align:left;">URL</th>
+	      	      	    </tr>
+	      	      	  </thead>
+	      	          <tbody>
+	      	      	  </tbody>
+			</table>
+	      	      </div>
+	      	    </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	  <!-- dasboard -->
 	  <div class="span9" id="home" style="DISPLAY: none">
             <div class="hero-unit">
 	      <h1>Welcome to the Varnish Agent</h1>
@@ -205,8 +348,12 @@
       </div><!--/row-->
     </div><!--/.fluid-container-->
   </div>
-    <script src="../html/js/jquery-1.10.2.min.js"></script>
-    <script src="../html/js/bootstrap.min.js"></script>
-    <script src="../html/js/agent.js"></script>
+  <script src="../html/js/agent.js"></script>
+  <script src="../html/js/bootstrap.min.js"></script>
+  <script src="../html/js/bootstrap-slider.js"></script>
+  <script src="../html/js/handlebars-1.0.0.js"></script>
+  <script src="../html/js/jquery-1.10.2.min.js"></script>
+  <script src="../html/js/justgage.1.0.1.js"></script>
+  <script src="../html/js/raphael.2.1.0.min.js"></script>
   </body>
 </html>
