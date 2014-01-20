@@ -62,7 +62,7 @@ function out_up()
 
 function topActive(head)
 {
-	var navs = new Array('nav-home', 'nav-vcl', 'nav-param');
+	var navs = new Array('nav-home', 'nav-vcl', 'nav-param', 'nav-dashboard');
 	assertText(head);
 
 	for (x in navs) {
@@ -76,6 +76,7 @@ function showVCL()
 	document.getElementById("params").style.display = "NONE";
 	document.getElementById("home").style.display = "NONE";
 	document.getElementById("vcl").style.display = "block";
+	document.getElementById("dashboard").style.display = "NONE";
 	topActive("vcl");
 }
 
@@ -84,11 +85,22 @@ function showHome()
 	document.getElementById("params").style.display = "NONE";
 	document.getElementById("home").style.display = "block";
 	document.getElementById("vcl").style.display = "NONE";
+	document.getElementById("dashboard").style.display = "NONE";
 	topActive("home");
+}
+
+function showDashboard()
+{
+	document.getElementById("dashboard").style.display = "block";
+	document.getElementById("vcl").style.display = "NONE";
+	document.getElementById("home").style.display = "NONE";
+	document.getElementById("params").style.display = "NONE";
+	topActive("dashboard");
 }
 
 function showParam()
 {
+	document.getElementById("dashboard").style.display = "NONE";
 	document.getElementById("vcl").style.display = "NONE";
 	document.getElementById("home").style.display = "NONE";
 	document.getElementById("params").style.display = "block";
